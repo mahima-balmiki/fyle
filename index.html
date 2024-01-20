@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github</title>
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+    />
+  </head>
+  <body>
+    <div class="inputs">
+      <input
+        id="username"
+        type="text"
+        placeholder="Your GitHub username goes here..."
+      />
+      <button onclick="showGithub()">Show Github</button>
+    </div>
+    <div class="output displayNone">
+      <div class="userInfo">
+        <img class="profilePicture" src="" alt="" />
+        <div>
+          <p>
+            <!-- <span>Username:</span> -->
+            <span class="userHandle"></span>
+          </p>
+          <p>
+            <!-- <span>Name:</span> -->
+            <span class="name"></span>
+          </p>
+          <p>
+            <!-- <span>Bio:</span><br /> -->
+            <span class="bio"></span>
+          </p>
+          <p>
+            <span class="material-symbols-outlined"> location_on </span>
+            <span class="location"></span>
+          </p>
+          <p>
+            <span class="twitter_span">Twitter:&nbsp;</span>
+            <span class="twitter_username"></span>
+          </p>
+        </div>
+      </div>
+      <p class="github_url_p">
+        <span class="github_url_span">Github URL:</span>
+        <a class="github_url" href="" target="_blank"></a>
+      </p>
+      <div class="filterDiv">
+        <span for="filter" class="filter_span">Filter : </span>
+        <input
+          type="text"
+          id="filter"
+          placeholder="Filter..."
+          onchange="showGithub()"
+        />
+        <button onclick="showGithub()">Show Results</button>
+      </div>
+      <span class="rpp_span">Repos per Page:</span>
+      <input
+        id="perPage"
+        type="number"
+        value="10"
+        min="10"
+        max="100"
+        step="10"
+        onchange="showGithub()"
+      />
+
+      <div class="repos"></div>
+      <div class="pagination">
+        <button class="previous" onclick="gotoPreviousPage()">Previous</button>
+        <div class="pages"></div>
+        <button class="next" onclick="gotoNextPage()">Next</button>
+      </div>
+    </div>
+  </body>
+</html>
